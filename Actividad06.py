@@ -18,6 +18,9 @@ def positivoNegativo (numeros):
             negativos += 1
     return print(f"La cantidad de numeros positivos es: {positivos} y de negativos: {negativos}")
 
+def ares(a,b):
+    area = (a*b)/2
+    return print(f"El area del triangulo es: {area}")
 
 while True:
     print("--Bienvenido al Menu--")
@@ -37,3 +40,7 @@ while True:
             print(f"La suma de todos sus numeros es: {suma(listaNumeros)}")
             print(f"El promedio de todos sus numeros es: {promedio(listaNumeros)}")
             positivoNegativo(listaNumeros)
+        case "2":
+            altura= int(input("Ingrese la altura del triangulo: "))
+            base = int(input("Ingrese la base del triangulo: "))
+            ares(altura, base)
