@@ -1,10 +1,8 @@
-listaNumeros = []
-calificaciones = []
-def pedirDatos ():
+def pedirDatos (lista):
     pedirNum = int(input("Ingrese la cantidad de numeros que quiere ingresar: "))
     for i in range(pedirNum):
         numero = int(input("Ingrese el numero: "))
-        listaNumeros.append(numero)
+        lista.append(numero)
 
 def suma(numeros):
     suma = 0
@@ -29,11 +27,18 @@ def area(a,b):
     area = (a*b)/2
     return print(f"El area del triangulo es: {area}")
 
-def par(num):
+def parImpar(num):
     if num%2==0:
         print("Es par")
     else:
         print("Es impar")
+
+def numeroMayorMenor(listaNum):
+    mayor = max(listaNum)
+    menor = min(listaNum)
+    return print(f"El numero mayor es: {mayor} y el numero menor es: {menor}")
+
+
 while True:
     print("--Bienvenido al Menu--")
     print("1. Suma, promedio y la cantidad de numeros positivos y negativos")
@@ -45,10 +50,8 @@ while True:
     option = input("ingrese la opcion en la que quiera entrar: ")
     match option:
         case "1":
-            pedirNum = int(input("Ingrese la cantidad de numeros que quiere ingresar: "))
-            for i in range(pedirNum):
-                numero = int(input("Ingrese el numero: "))
-                listaNumeros.append(numero)
+            listaNumeros = []
+            pedirDatos(listaNumeros)
             print(f"La suma de todos sus numeros es: {suma(listaNumeros)}")
             print(f"El promedio de todos sus numeros es: {promedio(listaNumeros)}")
             positivoNegativo(listaNumeros)
@@ -58,11 +61,17 @@ while True:
             area(altura, base)
         case"3":
             numero= int(input("Ingrese el numero que quiere evaluar"))
-            par(numero)
+            parImpar(numero)
         case "4":
-            pedirCali = int(input("Ingrese la cantidad de calificaciones que quiere ingresar: "))
-            for i in range(pedirCali):
-                calificacion = int(input("Ingrese sus calificaciones: "))
-                calificaciones.append(calificacion)
+            calificaciones = []
+            pedirDatos(calificaciones)
             print(f"El promedio de sus calificaciones: {promedio(calificaciones)}")
-
+        case "5":
+            listaNumeros = []
+            pedirDatos(listaNumeros)
+            numeroMayorMenor(listaNumeros)
+        case "6":
+            print("Saliendo del programa")
+            break
+        case _:
+            print("opcion no valida, intente de nuevo")
