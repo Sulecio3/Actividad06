@@ -1,7 +1,7 @@
 def pedirDatos (lista):
     pedirNum = int(input("Ingrese la cantidad de numeros que quiere ingresar: "))
     for i in range(pedirNum):
-        numero = int(input("Ingrese el numero: "))
+        numero = int(input("Ingrese sus numeros: "))
         lista.append(numero)
 
 def suma(numeros):
@@ -55,23 +55,29 @@ while True:
             print(f"La suma de todos sus numeros es: {suma(listaNumeros)}")
             print(f"El promedio de todos sus numeros es: {promedio(listaNumeros)}")
             positivoNegativo(listaNumeros)
+            input("")
         case "2":
             altura= int(input("Ingrese la altura del triangulo: "))
             base = int(input("Ingrese la base del triangulo: "))
             area(altura, base)
+            input("")
         case"3":
             numero= int(input("Ingrese el numero que quiere evaluar"))
             parImpar(numero)
+            input("")
         case "4":
             calificaciones = []
             pedirDatos(calificaciones)
             print(f"El promedio de sus calificaciones: {promedio(calificaciones)}")
+            input("")
         case "5":
             listaNumeros = []
             pedirDatos(listaNumeros)
             numeroMayorMenor(listaNumeros)
+            input("")
         case "6":
             print("Saliendo del programa")
             break
         case _:
             print("opcion no valida, intente de nuevo")
+            input("")
